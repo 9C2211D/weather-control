@@ -1,0 +1,36 @@
+name: WeatherControl
+version: 1.0-SNAPSHOT
+main: com.weathercontrol.WeatherControlPlugin
+api-version: "1.20"
+authors: [ 9C2211D ]
+description: "一个投票天气的插件"
+
+commands:
+  weather:
+    description: Weather control commands
+    usage: |
+      /weather set <weather> - Set weather (admin only)
+      /weather vote <weather> - Start weather vote
+      /weather vote-yes - Vote yes for current vote
+      /weather vote-no - Vote no for current vote
+      /weather info - Show current weather info
+      /weather reload - Reload configuration
+    permission: weather.use
+    permission-message: "&cYou don't have permission to use this command!"
+
+permissions:
+  weather.admin:
+    description: Allows setting weather directly
+    default: op
+  weather.vote:
+    default: true
+    description: Allows voting for weather changes
+  weather.info:
+    default: true
+    description: Allows viewing weather information
+  weather.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+  weather.use:
+    description: Basic weather command usage
+    default: true

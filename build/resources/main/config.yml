@@ -1,0 +1,59 @@
+# 天气控制插件配置文件
+
+# 投票系统配置
+voting:
+  # 投票持续时间（秒）
+  duration: 30
+  # 最少投票人数要求
+  min_voters: 2
+  # 投票成功所需的赞成比例（0.0-1.0）
+  success_ratio: 0.5
+  # 投票冷却时间（秒），防止频繁发起投票
+  cooldown: 60
+  # 是否允许发起者自动投赞成票
+  auto_vote_initiator: true
+
+# 天气类型配置
+weather_types:
+  clear:
+    display_name: "晴天"
+    description: "阳光明媚的好天气"
+  rain:
+    display_name: "雨天"
+    description: "淅淅沥沥的雨水"
+  thunder:
+    display_name: "雷暴"
+    description: "电闪雷鸣的暴风雨"
+  snow:
+    display_name: "雪天"
+    description: "纷纷扬扬的雪花"
+
+# 消息配置
+messages:
+  # 投票相关消息
+  vote_started: "&e{player} &a发起了天气投票：将天气改为 &b{weather}&a！"
+  vote_instruction: "&7点击 &a[赞成] &7或 &c[反对] &7来投票，剩余时间：&e{time}&7秒"
+  vote_success: "&a投票成功！天气已改为 &b{weather}&a！赞成：&e{yes}&a，反对：&e{no}"
+  vote_failed: "&c投票失败！赞成：&e{yes}&c，反对：&e{no}&c，需要至少 &e{required}% &c的赞成率"
+  vote_timeout: "&c投票超时！参与人数不足，需要至少 &e{min_voters} &c人参与投票"
+  vote_cooldown: "&c投票冷却中，请等待 &e{time} &c秒后再发起投票"
+  vote_already_active: "&c当前已有投票进行中，请等待结束后再发起新投票"
+  
+  # 天气设置消息
+  weather_set: "&a天气已设置为 &b{weather}&a！"
+  weather_info: "&7当前天气：&b{weather}&7，持续时间：&e{duration}&7秒"
+  
+  # 权限和错误消息
+  no_permission: "&c你没有权限执行此操作！"
+  invalid_weather: "&c无效的天气类型！可用类型：clear, rain, thunder, snow"
+  config_reloaded: "&a配置文件已重新加载！"
+  
+  # 投票按钮
+  vote_yes: "&a[赞成]"
+  vote_no: "&c[反对]"
+  vote_yes_hover: "&7点击投赞成票"
+  vote_no_hover: "&7点击投反对票"
+  already_voted: "&e你已经投过票了！"
+
+# 调试模式
+debug: false
